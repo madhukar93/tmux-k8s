@@ -24,12 +24,10 @@ get_status() {
             context_info="N/A"
             namespace="N/A"
         fi
-        
-        pods=$(get_running_pods)
 
-        status="ctx:${context} clu:${cluster} ns:${namespace} pods:${pods}"
+        status="${context}:${namespace}"
     fi
-        
+
     echo "$status"
 }
 

@@ -25,7 +25,8 @@ k8s_status="#($CURRENT_DIR/scripts/k8s_status.sh)"
 
 # Substitution, change the color of the background here
 k8s_status_placeholder="\#{k8s_status}"
-k8s_status_draw="#[fg=white,bg=colour27] ${k8s_status} #[fg=default,bg=default]"
+#k8s_status_draw="#{?pane_in_mode,#[fg=white#,bg=blue],#[fg=white#,bg=red]} ${k8s_status} #[fg=default,bg=default]"
+k8s_status_draw="#{?#{m:*prod*,${k8s_status}},#[fg=white#,bg=red],#[fg=white#,bg=green]} ${k8s_status} #[fg=default,bg=default]"
 
 # Update left and right
 update_status "status-left"
